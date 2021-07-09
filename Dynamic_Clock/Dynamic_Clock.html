@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clock</title>
+    <style>
+        body{
+            background-color: rgb(37, 33, 33) ;  
+        }
+        div{
+            margin: 200px auto;
+            text-align: center;
+        }
+        p {           
+            font-size: xx-large;
+            font-weight: bold;        
+            color: rgb(170, 172, 147);
+        }
+        button{          
+            width: 200px;
+            height: 30px;
+            background: linear-gradient(to left , #2c0c85,#807767);
+            color: white;
+        }
+
+        button:hover{
+            background: linear-gradient(to left ,#807767, #2c0c85);
+        }
+    </style>
+   
+</head>
+<body>
+    <div>      
+        <p id="Demo"></p>
+        <button onclick="clearInterval(clock)">STOP</button>
+    </div>
+  
+
+    <script >
+
+         var clock = setInterval(myclock,1000);
+ 
+         function myclock(){
+             var d = new Date();
+             var Temp = d.toLocaleTimeString();
+            document.getElementById("Demo").innerHTML = Temp;
+            
+         }
+       
+    </script>
+</body>
+</html>
